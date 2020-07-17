@@ -37,9 +37,6 @@ module.exports = app => {
      *  HTTP/1.1 412 Precondition Failed
      */
     .get((req, res) => {
-      // console.log(req.query, "?req是什么");
-      console.log({ id: req.query }, "?sq语句");
-
       Tasks.findAll({ where: req.query })
         .then(result => res.json(result))
         .catch(error => {
